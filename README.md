@@ -3,40 +3,36 @@
 ## AIM
 To develop a convolutional deep neural network (CNN) for image classification and to verify the response for new images.
 
-##   PROBLEM STATEMENT AND DATASET
 Image classification is a fundamental task in computer vision where an input image is assigned to one of several predefined classes. The objective of this experiment is to build and train a Convolutional Neural Network (CNN) using a labeled image dataset and evaluate its performance using accuracy, confusion matrix, and classification report.
 
 ## Neural Network Model
-<img width="998" height="698" alt="image" src="https://github.com/user-attachments/assets/040871e4-5171-4f91-bf22-97657c8c1d37" />
+<img width="998" height="698" alt="image" src="https://github.com/user-attachments/assets/1644c565-424d-428c-975e-a8337ead2c39" />
 
 ## DESIGN STEPS
 ### STEP 1: 
-
 Import the required libraries (torch, torchvision, torch.nn, torch.optim) and load the image dataset with necessary preprocessing like normalization and transformation.
 
-### STEP 2:
+### STEP 2: 
 Split the dataset into training and testing sets and create DataLoader objects to feed images in batches to the CNN model.
 
-### STEP 3:
+### STEP 3: 
 Define the CNN architecture using convolutional layers, ReLU activation, max pooling layers, and fully connected layers as implemented in the CNNClassifier class.
 
-### STEP 4:
+### STEP 4: 
 Initialize the model, define the loss function (CrossEntropyLoss), and choose the optimizer (Adam) for training the network.
 
-### STEP 5:
+### STEP 5: 
 Train the model using the training dataset by performing forward pass, computing loss, backpropagation, and updating weights for multiple epochs.
 
-STEP 6:
+### STEP 6: 
 Evaluate the trained model on test images and verify the classification accuracy for new unseen images.
-
-
 ## PROGRAM
 
-### Name: THAVANESH B
+### Name:THAVANESH B
 
-### Register Number: 212224040352
+### Register Number:212224040352
 
-```
+```python
 class CNNClassifier(nn.Module):
     def __init__(self):
         super(CNNClassifier, self).__init__()
@@ -56,13 +52,10 @@ class CNNClassifier(nn.Module):
         x=torch.relu(self.fc2(x))
         x=self.fc3(x)
         return x
-
 # Initialize model, loss function, and optimizer
 model = CNNClassifier()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(),lr=0.001)
-
-
 ## Step 3: Train the Model
 def train_model(model, train_loader, num_epochs=3):
     for epoch in range(num_epochs):
@@ -75,19 +68,23 @@ def train_model(model, train_loader, num_epochs=3):
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
-        print('Name:SUDHARSAN S)
-        print('Register Number:212224040335')
+        print('Name:THAVANESH')
+        print('Register Number:212224010352')
         print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}')
 ```
 
 ### OUTPUT
-<img width="886" height="757" alt="image" src="https://github.com/user-attachments/assets/866098f1-264f-4c7a-8a03-f7be240a1343" />
+
+## Confusion Matrix
+<img width="886" height="757" alt="image" src="https://github.com/user-attachments/assets/3e448480-a137-4749-a05c-427972ddcdb9" />
 
 ## Classification Report
-<img width="694" height="474" alt="image" src="https://github.com/user-attachments/assets/6ea6fcff-edc6-40f1-ab2c-3516f23ff0a9" />
+<img width="694" height="474" alt="ij" src="https://github.com/user-attachments/assets/c7148e03-7d87-4253-ae05-f720d59316a7" />
+
 
 ### New Sample Data Prediction
-<img width="620" height="711" alt="image" src="https://github.com/user-attachments/assets/5168e55a-c1aa-4782-9688-8fb0002be6a0" />
+<img width="620" height="711" alt="ce" src="https://github.com/user-attachments/assets/7340ca11-6ec6-4d78-b81a-d14164d1b8a4" />
+
 
 ## RESULT
 The Convolutional Neural Network (CNN) model was successfully trained and achieved good classification performance on the given image dataset.
